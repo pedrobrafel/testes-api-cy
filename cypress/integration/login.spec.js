@@ -7,8 +7,8 @@ describe('Login', () => {
             method: 'POST',
             url: 'login',
             body: {
-                "email": "fulano@qa.com",
-                "password": "teste" 
+                "email": "pedro_felix@qa.com.br",
+                "password": "pedro@123" 
             }
         }).then((response) => {
             expect(response.status).to.equal(200)

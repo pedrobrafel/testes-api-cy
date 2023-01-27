@@ -55,8 +55,8 @@ describe('Testes da Funcionalidade Usuários', () => {
           let novoUsuario = `Usuario Teste ${Math.floor(Math.random() * 1000)}`
           let usuarioEmail = `user${Math.floor(Math.random() * 1000)}@teste.com`
           cy.cadastrarUsuario(novoUsuario, usuarioEmail, 'teste@123', 'true', token)
-               .then(reposta => {
-                    let id = reposta.body._id
+               .then(resposta => {
+                    let id = resposta.body._id
 
                     cy.request({
                          method: 'PUT',
@@ -69,8 +69,8 @@ describe('Testes da Funcionalidade Usuários', () => {
                               "password": "pedro@123",
                               "administrador": "true"
                          }
-                    }).then(reposta => {
-                         expect(reposta.body.message).to.equal('Registro alterado com sucesso')
+                    }).then(resposta => {
+                         expect(resposta.body.message).to.equal('Registro alterado com sucesso')
                     })
                });
      });
